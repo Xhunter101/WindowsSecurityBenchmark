@@ -186,36 +186,47 @@ class MainWindow(QtWidgets.QWidget,Ui_Zero_Security):
    
     def dashboard(self):
         import dashboard
+        def clear_layout(layout):
+            if layout is not None:
+                while layout.count():
+                    child = layout.takeAt(0)
+                    if child.widget():
+                        child.widget().deleteLater()
+
+        # Generate the plots using the dashboard module
         fig1 = dashboard.plot_pie_chart()
         fig2 = dashboard.plot_doughnut_chart()
         fig3 = dashboard.plot_bar_chart_dfr2()
         fig4 = dashboard.plot_bar_chart_dfr3()
-        
+
+        # Create Matplotlib canvases for the figures
         canvas1 = FigureCanvas(fig1)
         canvas2 = FigureCanvas(fig2)
         canvas3 = FigureCanvas(fig3)
         canvas4 = FigureCanvas(fig4)
-        
-        layout1 = self.ax1.layout()
-        layout2 = self.ax2.layout()
-        layout3 = self.ax3.layout()
-        layout4 = self.ax4.layout()
-        
-        layout1.addWidget(canvas1)
-        layout2.addWidget(canvas2)
-        layout3.addWidget(canvas3)
-        layout4.addWidget(canvas4)
 
-        # section
+        # Clear previous widgets in layouts
+        clear_layout(self.ax1.layout())
+        clear_layout(self.ax2.layout())
+        clear_layout(self.ax3.layout())
+        clear_layout(self.ax4.layout())
+
+        # Add the new canvases to the layouts
+        self.ax1.layout().addWidget(canvas1)
+        self.ax2.layout().addWidget(canvas2)
+        self.ax3.layout().addWidget(canvas3)
+        self.ax4.layout().addWidget(canvas4)
+
+        # Section visibility
         self.dashboard_plot.show()
         self.result_table.hide()
         self.path_table.hide()
         self.system_info.hide()
 
-        # button
+        # Button visibility
         self.hardening.show()
         self.check_security_result.hide()
-        
+     
     def table_hardening(self):
         # section
         self.dashboard_plot.hide()
