@@ -64,7 +64,6 @@ pip install -r requirements.txt
 ## **ScreenShots**
 <details><summary>Click Here</summary>
  
-<<<<<<< HEAD
    ![WhatsApp Image 2024-11-22 at 04 29 22 (2)](https://github.com/user-attachments/assets/b3ebdd6e-e724-461a-954c-8846b73fc8bd)
    ![WhatsApp Image 2024-11-22 at 04 29 11](https://github.com/user-attachments/assets/dd110afc-d2bf-45c3-b3d7-e12fc0c6d2c0)
    ![WhatsApp Image 2024-11-22 at 04 29 23](https://github.com/user-attachments/assets/eacecfd8-d842-49ea-a873-2bda9aa95200)
