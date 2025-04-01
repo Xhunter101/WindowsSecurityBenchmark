@@ -49,7 +49,7 @@ Before you begin, ensure you have the following installed on your system:
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/Dibyataru-Chakraborty/System-Security-Benchmark.git
+git clone https://github.com/Xhunter101/WindowsSecurityBenchmark.git
 cd System-Security-Benchmark
 ```
 
